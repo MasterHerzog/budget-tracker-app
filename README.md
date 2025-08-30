@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💰 Expense Tracker App – Feature Roadmap
 
-## Getting Started
+## 🟢 Core Features (MVP)
+These are must-haves to make the app usable:
+- ✅ User authentication (register, login, logout, profile)  
+- ✅ Add an expense (amount, category, date, note)  
+- ✅ List all expenses  
+- ✅ Edit/delete an expense  
+- ✅ Filter expenses by date or category  
+- ✅ Show total expenses  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🟡 Nice-to-Have Features
+Enhancements for better usability:
+- 📊 Dashboard with charts (spending by category, monthly summary)  
+- 🔎 Search bar for expenses  
+- 📂 Categories management (custom categories)  
+- 📱 Responsive/mobile-friendly UI  
+- 📤 Export expenses to CSV/Excel  
+- 🕒 Pagination or infinite scroll for expense history  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔵 Advanced Features
+For a more professional product:
+- 💳 Budgets (set a monthly budget per category & show progress)  
+- 🔔 Notifications/alerts when nearing budget  
+- 🔁 Recurring expenses (subscriptions, rent, etc.)  
+- 💵 Multi-currency support  
+- 👥 Multi-user (shared household expenses)  
+- 📑 PDF report generation  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🟣 Future / Stretch Goals
+Extra features to push the app further:
+- 📱 Mobile app (React Native) using the same backend  
+- 🌐 Cloud sync + offline mode  
+- 🤖 AI assistant (categorize expenses automatically from description)  
+- 🏦 Bank API integration (auto-import transactions)  
+- 📈 Financial insights (e.g., *“Your food spending is up 20% this month”*)  
