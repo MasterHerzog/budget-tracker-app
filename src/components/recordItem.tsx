@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Record } from "@/types/Record";
+import { Record } from "@/types/record";
 import deleteRecord from "@/app/actions/deleteRecord";
 
 // Helper function to get category emoji
