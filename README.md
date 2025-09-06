@@ -283,7 +283,7 @@ export default function Navbar() {
   return <div>navbar</div>;
 }
 ```
-# Part 4 - Navbar component
+# Part 4 - Navbar component & page design
 ## Update navbar component
 1. go to `src/components/ui/navbar.tsx`
 ```typescript
@@ -929,3 +929,3061 @@ export default function RootLayout({
   );
 }
 ```
+## Create about and contact pages
+1. Go to `src/app/` create a folder called `about`, create a file inside called `page.tsx`.
+```typescript
+import Link from "next/link";
+
+const AboutPage = () => {
+  return (
+    <div className="font-sans bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20 text-gray-800 dark:text-gray-200 transition-all duration-300 min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden flex flex-col items-center justify-center text-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-emerald-500/10 via-green-500/5 to-teal-500/10 dark:from-emerald-900/30 dark:via-green-900/20 dark:to-teal-900/30">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
+        <div className="relative z-10 max-w-4xl mx-auto w-full">
+          <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></span>
+            <span className="hidden sm:inline">Powered by AI Technology</span>
+            <span className="sm:hidden">AI Technology</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 leading-tight">
+            About{" "}
+            <span className="bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
+              ExpenseTracker AI
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+            Your intelligent companion for tracking expenses and managing your
+            finances with cutting-edge AI-powered insights.
+          </p>
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0">
+            <Link
+              href="/sign-up"
+              className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:-translate-y-0.5"
+            >
+              <span className="relative z-10">Start Your Journey</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+            </Link>
+            <Link
+              href="/contact"
+              className="group border-2 border-emerald-500/20 dark:border-emerald-400/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold transition-all duration-200 backdrop-blur-sm"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500"></div>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+            Our Mission
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
+            Transforming Financial Management with{" "}
+            <span className="text-emerald-600 dark:text-emerald-400">AI</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
+            At ExpenseTracker AI, we leverage cutting-edge artificial
+            intelligence to revolutionize how individuals achieve financial
+            wellness. Our AI analyzes your spending patterns to deliver
+            personalized recommendations and actionable insights that lead to
+            better budgeting and financial freedom.
+          </p>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 p-6 rounded-2xl border border-emerald-100 dark:border-emerald-800/50">
+              <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
+                10K+
+              </div>
+              <div className="text-gray-600 dark:text-gray-400 font-medium">
+                Active Users
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-6 rounded-2xl border border-green-100 dark:border-green-800/50">
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+                $2M+
+              </div>
+              <div className="text-gray-600 dark:text-gray-400 font-medium">
+                Money Tracked
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 p-6 rounded-2xl border border-teal-100 dark:border-teal-800/50">
+              <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 mb-2">
+                99%
+              </div>
+              <div className="text-gray-600 dark:text-gray-400 font-medium">
+                Satisfaction Rate
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 px-8 bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-sm font-medium mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+              Features
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+              Why Choose{" "}
+              <span className="text-emerald-600 dark:text-emerald-400">
+                ExpenseTracker AI?
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Discover the powerful features that make our AI-driven platform
+              the smart choice for modern financial management.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg mb-6">
+                  <span className="text-white text-xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+                  AI-Powered Insights
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Get intelligent analysis of your spending patterns with
+                  personalized AI recommendations and automated category
+                  suggestions that learn from your behavior.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-teal-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg mb-6">
+                  <span className="text-white text-xl">✨</span>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+                  Smart Categorization
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Let our AI automatically categorize your expenses with 99%
+                  accuracy and provide tailored recommendations to enhance your
+                  budget management effortlessly.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 via-emerald-500 to-green-500 rounded-xl flex items-center justify-center shadow-lg mb-6">
+                  <span className="text-white text-xl">📊</span>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+                  Intelligent Dashboard
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Experience a modern, AI-enhanced interface with real-time
+                  insights, interactive financial analytics, and beautiful
+                  visualizations that make sense of your data.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-20 px-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-full blur-2xl"></div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-sm font-medium mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+              Our Story
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-gray-100">
+              Built for the{" "}
+              <span className="text-emerald-600 dark:text-emerald-400">
+                Future
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                ExpenseTracker AI was born from the vision of creating truly
+                intelligent financial management tools. Our team of financial
+                experts, data scientists, and technologists came together to
+                solve a critical problem: making personal finance management
+                smarter, more intuitive, and more effective.
+              </p>
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                Since our launch, we&#39;ve helped thousands of users achieve
+                better budgeting and improve their overall financial health
+                through the power of artificial intelligence. Every feature is
+                designed with user experience and financial wellness in mind.
+              </p>
+              <div className="flex items-center gap-4 pt-4">
+                <div className="flex -space-x-2">
+                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+                  <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="font-semibold">Trusted by 10,000+ users</div>
+                  <div>Join our growing community</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 p-8 rounded-2xl border border-emerald-100 dark:border-emerald-800/50">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-emerald-500 dark:bg-emerald-400 rounded-full"></div>
+                  <div className="text-gray-900 dark:text-gray-100 font-medium">
+                    Founded in 2024
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-green-500 dark:bg-green-400 rounded-full"></div>
+                  <div className="text-gray-900 dark:text-gray-100 font-medium">
+                    AI-First Approach
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-teal-500 dark:bg-teal-400 rounded-full"></div>
+                  <div className="text-gray-900 dark:text-gray-100 font-medium">
+                    Global Impact
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-3 h-3 bg-emerald-500 dark:bg-emerald-400 rounded-full"></div>
+                  <div className="text-gray-900 dark:text-gray-100 font-medium">
+                    User-Centric Design
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-20 px-8 bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500"></div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-lg">
+            <span className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></span>
+            Ready to Transform Your Finances?
+          </div>
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-gray-100">
+            Take Control of Your{" "}
+            <span className="bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
+              Financial Future
+            </span>
+          </h2>
+
+          <p className="text-xl md:text-2xl mb-10 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Join thousands of users who have already transformed their financial
+            habits with ExpenseTracker AI. Start your journey towards smarter
+            budgeting today.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link
+              href="/sign-up"
+              className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white px-8 py-4 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:-translate-y-0.5"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Get Started Free
+                <span className="text-lg">→</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+            </Link>
+
+            <Link
+              href="/contact"
+              className="group border-2 border-emerald-500/20 dark:border-emerald-400/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 backdrop-blur-sm flex items-center gap-2"
+            >
+              Contact Us
+              <span className="text-lg group-hover:translate-x-0.5 transition-transform duration-200">
+                💬
+              </span>
+            </Link>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
+                Free
+              </div>
+              <div className="text-gray-600 dark:text-gray-400">
+                No credit card required
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+                24/7
+              </div>
+              <div className="text-gray-600 dark:text-gray-400">
+                AI-powered support
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 mb-2">
+                Instant
+              </div>
+              <div className="text-gray-600 dark:text-gray-400">
+                Setup in minutes
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default AboutPage;
+```
+2. Go to `src/app/` create a folder called `contact`, create a file inside called `page.tsx`.
+```typescript
+"use client";
+
+const ContactPage = () => {
+  return (
+    <div className="font-sans bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20 text-gray-800 dark:text-gray-200 transition-all duration-300 min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden flex flex-col items-center justify-center text-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-emerald-500/10 via-green-500/5 to-teal-500/10 dark:from-emerald-900/30 dark:via-green-900/20 dark:to-teal-900/30">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
+        <div className="relative z-10 max-w-4xl mx-auto w-full">
+          <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></span>
+            Get in Touch
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 leading-tight">
+            Contact{" "}
+            <span className="bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
+              ExpenseTracker AI
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+            Have questions about AI-powered expense tracking or need help?
+            We&#39;re here to assist you with intelligent financial management.
+          </p>
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0">
+            <a
+              href="mailto:support@expensetracker-ai.com"
+              className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:-translate-y-0.5"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Send us an Email
+                <span className="text-lg">✉️</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+            </a>
+            <a
+              href="tel:+11234567890"
+              className="group border-2 border-emerald-500/20 dark:border-emerald-400/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold transition-all duration-200 backdrop-blur-sm flex items-center justify-center gap-2"
+            >
+              Call Us
+              <span className="text-lg">📞</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500"></div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+              Contact Information
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
+              Multiple Ways to{" "}
+              <span className="text-emerald-600 dark:text-emerald-400">
+                Connect
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2 sm:px-0">
+              Choose the most convenient way to reach out to our ExpenseTracker
+              AI support team.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 text-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-4 sm:mb-6 mx-auto">
+                  <span className="text-white text-lg sm:text-xl">✉️</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
+                  Email Support
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 leading-relaxed">
+                  Get detailed assistance with your questions. We typically
+                  respond within 24 hours.
+                </p>
+                <a
+                  href="mailto:support@expensetracker-ai.com"
+                  className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium transition-colors duration-200 text-sm sm:text-base break-all sm:break-normal"
+                >
+                  <span className="hidden sm:inline">
+                    support@expensetracker-ai.com
+                  </span>
+                  <span className="sm:hidden">Email Us</span>
+                  <span className="text-sm">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 text-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-teal-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-4 sm:mb-6 mx-auto">
+                  <span className="text-white text-lg sm:text-xl">📞</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
+                  Phone Support
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 leading-relaxed">
+                  Speak directly with our support team for immediate assistance
+                  with urgent matters.
+                </p>
+                <a
+                  href="tel:+11234567890"
+                  className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium transition-colors duration-200 text-sm sm:text-base"
+                >
+                  +1 (123) 456-7890
+                  <span className="text-sm">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 text-center sm:col-span-2 lg:col-span-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-teal-500 via-emerald-500 to-green-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-4 sm:mb-6 mx-auto">
+                  <span className="text-white text-lg sm:text-xl">📍</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
+                  Office Location
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 leading-relaxed">
+                  Visit our headquarters for in-person consultations and
+                  partnership discussions.
+                </p>
+                <div className="text-emerald-600 dark:text-emerald-400 font-medium text-sm sm:text-base">
+                  123 AI Innovation St
+                  <br />
+                  Tech City, USA
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Support Hours & FAQ Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+              Support Information
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
+              We&#39;re Here to{" "}
+              <span className="text-emerald-600 dark:text-emerald-400">
+                Help
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-md sm:rounded-lg flex items-center justify-center shadow-lg">
+                  <span className="text-white text-xs sm:text-sm">🕒</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+                  Support Hours
+                </h3>
+              </div>
+              <div className="space-y-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                <div className="flex justify-between">
+                  <span>Monday - Friday:</span>
+                  <span className="font-medium">9:00 AM - 6:00 PM PST</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Saturday:</span>
+                  <span className="font-medium">10:00 AM - 4:00 PM PST</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Sunday:</span>
+                  <span className="font-medium">Closed</span>
+                </div>
+                <div className="mt-4 p-3 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg">
+                  <p className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-300">
+                    <strong>Email support:</strong> Available 24/7 with
+                    responses within 24 hours
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-md sm:rounded-lg flex items-center justify-center shadow-lg">
+                  <span className="text-white text-xs sm:text-sm">❓</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+                  Quick Help
+                </h3>
+              </div>
+              <div className="space-y-3">
+                <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-xs sm:text-sm mb-1">
+                    Technical Issues
+                  </h4>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    App not working properly? Check our troubleshooting guide
+                    first.
+                  </p>
+                </div>
+                <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-xs sm:text-sm mb-1">
+                    AI Features
+                  </h4>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    Questions about AI insights? Our AI documentation has
+                    answers.
+                  </p>
+                </div>
+                <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-xs sm:text-sm mb-1">
+                    Account & Billing
+                  </h4>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    Account issues or billing questions? Contact us directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ContactPage;
+```
+## Update Home page
+1. Go to `src/app/page.tsx`.
+```typescript
+import GuestView from "@/components/ui/guestView";
+import { currentUser } from "@clerk/nextjs/server";
+
+export default async function Home() {
+  const user = await currentUser();
+
+  if(!user){
+    return <GuestView />;
+  }
+
+  return (
+    <div>
+      <h1>Welcome to the Home Page</h1>
+      <p>This is a simple budget tracker application.</p>
+    </div>
+  );
+}
+
+```
+2. Create the guest view component, go to `src/components/ui` and create a file called `guestView.tsx`.
+```typescript
+import { SignInButton } from "@clerk/nextjs";
+
+const GuestView = () => {
+  return (
+    <div className="font-sans bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20 text-gray-800 dark:text-gray-200 transition-all duration-300 min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden flex flex-col items-center justify-center text-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-emerald-500/10 via-green-500/5 to-teal-500/10 dark:from-emerald-900/30 dark:via-green-900/20 dark:to-teal-900/30">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
+        <div className="relative z-10 max-w-4xl mx-auto w-full">
+          <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 shadow-lg">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></span>
+            <span className="hidden sm:inline">
+              AI-Powered Financial Management
+            </span>
+            <span className="sm:hidden">AI Financial Management</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 leading-tight">
+            Welcome to{" "}
+            <span className="bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
+              ExpenseTracker AI
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto px-2 sm:px-0">
+            Track your expenses, manage your budget, and get AI-powered insights
+            to take control of your finances with intelligent automation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-2 sm:px-0">
+            <SignInButton>
+              <button className="group relative overflow-hidden bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:-translate-y-0.5">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Get Started Free
+                  <span className="text-lg">→</span>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              </button>
+            </SignInButton>
+            <button className="group border-2 border-emerald-500/20 dark:border-emerald-400/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold transition-all duration-200 backdrop-blur-sm">
+              Learn More
+            </button>
+          </div>
+
+          {/* Feature highlights */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto px-2 sm:px-0">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-3 sm:mb-4 mx-auto">
+                <span className="text-white text-base sm:text-lg">🤖</span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">
+                AI Insights
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">
+                Smart analysis of your spending patterns
+              </p>
+            </div>
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-3 sm:mb-4 mx-auto">
+                <span className="text-white text-base sm:text-lg">✨</span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">
+                Auto Categories
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">
+                Intelligent expense categorization
+              </p>
+            </div>
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50 sm:col-span-2 md:col-span-1">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-teal-500 via-emerald-500 to-green-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-3 sm:mb-4 mx-auto">
+                <span className="text-white text-base sm:text-lg">📊</span>
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">
+                Smart Dashboard
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">
+                Beautiful, intuitive financial overview
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500"></div>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+              FAQ
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
+              Frequently Asked{" "}
+              <span className="text-emerald-600 dark:text-emerald-400">
+                Questions
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2 sm:px-0">
+              Everything you need to know about ExpenseTracker AI and how it can
+              transform your financial management.
+            </p>
+          </div>
+
+          <div className="space-y-4 sm:space-y-6">
+            <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-200">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-md sm:rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                  <span className="text-white text-xs sm:text-sm">?</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-3">
+                    What is ExpenseTracker AI?
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    ExpenseTracker AI is an intelligent financial management
+                    tool that uses artificial intelligence to help you monitor
+                    your spending patterns, get smart category suggestions, and
+                    receive personalized insights to improve your financial
+                    health.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-200">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-md sm:rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                  <span className="text-white text-xs sm:text-sm">🤖</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-3">
+                    How does the AI work?
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Our AI analyzes your spending data to automatically
+                    categorize expenses, detect patterns, and provide
+                    personalized recommendations. You can also ask the AI
+                    questions about your spending habits and get instant,
+                    intelligent responses.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50 hover:shadow-xl transition-all duration-200">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-teal-500 via-emerald-500 to-green-500 rounded-md sm:rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                  <span className="text-white text-xs sm:text-sm">💎</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-3">
+                    Is ExpenseTracker AI free?
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Yes, ExpenseTracker AI offers a free plan with basic AI
+                    features including smart categorization and insights.
+                    Premium plans are available for advanced AI analytics and
+                    unlimited AI interactions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+              Testimonials
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
+              What Our Users{" "}
+              <span className="text-emerald-600 dark:text-emerald-400">
+                Say
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2 sm:px-0">
+              Join thousands of satisfied users who have transformed their
+              financial habits with ExpenseTracker AI.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-xs sm:text-sm font-bold">
+                      S
+                    </span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
+                      Sarah L.
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                      Verified User
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  &ldquo;ExpenseTracker AI has completely transformed my
+                  budgeting. The AI insights are incredibly helpful and I now
+                  have full control over my finances!&rdquo;
+                </p>
+                <div className="flex text-emerald-500 text-xs sm:text-sm">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-teal-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-xs sm:text-sm font-bold">
+                      J
+                    </span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
+                      John D.
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                      Verified User
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  &ldquo;The AI-powered insights from ExpenseTracker have helped
+                  me identify and reduce unnecessary spending. The smart
+                  categorization is amazing!&rdquo;
+                </p>
+                <div className="flex text-emerald-500 text-xs sm:text-sm">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-teal-500 via-emerald-500 to-green-500 rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-xs sm:text-sm font-bold">
+                      E
+                    </span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
+                      Emily R.
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                      Verified User
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  &ldquo;ExpenseTracker AI is so intelligent and easy to use.
+                  The AI recommendations are spot-on and have genuinely improved
+                  my financial habits!&rdquo;
+                </p>
+                <div className="flex text-emerald-500 text-xs sm:text-sm">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default GuestView;
+```
+# Part 5 - Add record functionality & AI
+1. got to `src/app/page.tsx`
+```typescript
+import AddNewRecord from "@/components/addNewRecord";
+import AIInsights from "@/components/aiInsights";
+import ExpenseStats from "@/components/expenseStats";
+import Guest from "@/components/guestView";
+import RecordChart from "@/components/recordChart";
+import RecordHistory from "@/components/recordHistory";
+import { currentUser } from "@clerk/nextjs/server";
+
+export default async function HomePage() {
+  const user = await currentUser();
+  if (!user) {
+    return <Guest />;
+  }
+  return (
+    <main className="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans min-h-screen transition-colors duration-300">
+      {/* Mobile-optimized container with responsive padding */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
+        {/* Mobile-first responsive grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          {/* Left Column - Stacked on mobile */}
+          <div className="space-y-4 sm:space-y-6">
+            {/* Welcome section with improved mobile layout */}
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
+              {/* User Image - responsive sizing */}
+              <div className="relative flex-shrink-0">
+                <img
+                  src={user.imageUrl}
+                  alt={`${user.firstName}&#39;s profile`}
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-white dark:border-gray-600 shadow-lg"
+                />
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-green-400 to-green-500 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center">
+                  <span className="text-white text-xs">✓</span>
+                </div>
+              </div>
+
+              {/* User Details - responsive text and layout */}
+              <div className="flex-1 text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3 mb-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm sm:text-lg">👋</span>
+                  </div>
+                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-100">
+                    Welcome Back, {user.firstName}!
+                  </h2>
+                </div>
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 max-w-md mx-auto sm:mx-0">
+                  Here&#39;s a quick overview of your recent expense activity.
+                  Track your spending, analyze patterns, and manage your budget
+                  efficiently!
+                </p>
+                {/* Mobile-optimized badge grid */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center sm:justify-start">
+                  <div className="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/30 dark:to-green-900/30 border border-emerald-100 dark:border-emerald-800 px-3 py-2 rounded-xl flex items-center gap-2 justify-center sm:justify-start">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-emerald-500 to-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">📅</span>
+                    </div>
+                    <div className="text-center sm:text-left">
+                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400 block">
+                        Joined
+                      </span>
+                      <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                        {new Date(user.createdAt).toLocaleDateString()}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 border border-green-100 dark:border-green-800 px-3 py-2 rounded-xl flex items-center gap-2 justify-center sm:justify-start">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">⚡</span>
+                    </div>
+                    <div className="text-center sm:text-left">
+                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400 block">
+                        Last Active
+                      </span>
+                      <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                        {user.lastActiveAt
+                          ? new Date(user.lastActiveAt).toLocaleDateString()
+                          : "Today"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Add New Expense */}
+            <AddNewRecord />
+          </div>
+
+          {/* Right Column - Stacked below on mobile */}
+          <div className="space-y-4 sm:space-y-6">
+            {/* Expense Analytics */}
+            <RecordChart />
+            <ExpenseStats />
+          </div>
+        </div>
+
+        {/* Full-width sections below - mobile-friendly spacing */}
+        <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
+          <AIInsights />
+          <RecordHistory />
+        </div>
+      </div>
+    </main>
+  );
+}
+```
+## Add new record component
+1. go to `src/components/addNewRecord.tsx`
+```typescript
+"use client";
+import { useRef, useState } from "react";
+import addExpenseRecord from "@/app/actions/addExpenseRecord";
+import { suggestCategory } from "@/app/actions/suggestCategory";
+
+const AddRecord = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [amount, setAmount] = useState(50); // Default value for expense amount
+  const [alertMessage, setAlertMessage] = useState<string | null>(null); // State for alert message
+  const [alertType, setAlertType] = useState<"success" | "error" | null>(null); // State for alert type
+  const [isLoading, setIsLoading] = useState(false); // State for loading spinner
+  const [category, setCategory] = useState(""); // State for selected expense category
+  const [description, setDescription] = useState(""); // State for expense description
+  const [isCategorizingAI, setIsCategorizingAI] = useState(false); // State for AI categorization loading
+
+  const clientAction = async (formData: FormData) => {
+    setIsLoading(true); // Show spinner
+    setAlertMessage(null); // Clear previous messages
+
+    formData.set("amount", amount.toString()); // Add the amount value to the form data
+    formData.set("category", category); // Add the selected category to the form data
+
+    const { error } = await addExpenseRecord(formData); // Removed `data` since it's unused
+
+    if (error) {
+      setAlertMessage(`Error: ${error}`);
+      setAlertType("error"); // Set alert type to error
+    } else {
+      setAlertMessage("Expense record added successfully!");
+      setAlertType("success"); // Set alert type to success
+      formRef.current?.reset();
+      setAmount(50); // Reset the amount to the default value
+      setCategory(""); // Reset the category
+      setDescription(""); // Reset the description
+    }
+
+    setIsLoading(false); // Hide spinner
+  };
+
+  const handleAISuggestCategory = async () => {
+    if (!description.trim()) {
+      setAlertMessage("Please enter a description first");
+      setAlertType("error");
+      return;
+    }
+
+    setIsCategorizingAI(true);
+    setAlertMessage(null);
+
+    try {
+      const result = await suggestCategory(description);
+      if (result.error) {
+        setAlertMessage(`AI Suggestion: ${result.error}`);
+        setAlertType("error");
+      } else {
+        setCategory(result.category);
+        setAlertMessage(`AI suggested category: ${result.category}`);
+        setAlertType("success");
+      }
+    } catch {
+      setAlertMessage("Failed to get AI category suggestion");
+      setAlertType("error");
+    } finally {
+      setIsCategorizingAI(false);
+    }
+  };
+
+  return (
+    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+          <span className="text-white text-sm sm:text-lg">💳</span>
+        </div>
+        <div>
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
+            Add New Expense
+          </h3>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+            Track your spending with AI assistance
+          </p>
+        </div>
+      </div>
+      <form
+        ref={formRef}
+        onSubmit={(e) => {
+          e.preventDefault();
+          const formData = new FormData(formRef.current!);
+          clientAction(formData);
+        }}
+        className="space-y-6 sm:space-y-8"
+      >
+        {/* Expense Description and Date */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-emerald-50/50 to-green-50/50 dark:from-emerald-900/10 dark:to-green-900/10 rounded-xl border border-emerald-100/50 dark:border-emerald-800/50">
+          {/* Expense Description */}
+          <div className="space-y-1.5">
+            <label
+              htmlFor="text"
+              className="flex items-center gap-2 text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-wide"
+            >
+              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+              Expense Description
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                id="text"
+                name="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                className="w-full pl-3 pr-12 sm:pr-14 py-2.5 bg-white/70 dark:bg-gray-800/70 border-2 border-gray-200/80 dark:border-gray-600/80 rounded-xl focus:ring-2 focus:ring-emerald-500/30 focus:bg-white dark:focus:bg-gray-700/90 focus:border-emerald-400 dark:focus:border-emerald-400 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 text-sm shadow-sm hover:shadow-md transition-all duration-200"
+                placeholder="Coffee, groceries, gas..."
+                required
+              />
+              <button
+                type="button"
+                onClick={handleAISuggestCategory}
+                disabled={isCategorizingAI || !description.trim()}
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-7 bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 disabled:from-gray-300 disabled:to-gray-300 text-white rounded-lg text-xs font-medium flex items-center justify-center shadow-lg hover:shadow-xl disabled:shadow-none transition-all duration-200"
+                title="AI Category Suggestion"
+              >
+                {isCategorizingAI ? (
+                  <div className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                ) : (
+                  <span className="text-xs">✨</span>
+                )}
+              </button>
+            </div>
+            {isCategorizingAI && (
+              <div className="flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400">
+                <div className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
+                AI is analyzing your description...
+              </div>
+            )}
+          </div>
+
+          {/* Expense Date */}
+          <div className="space-y-1.5">
+            <label
+              htmlFor="date"
+              className="flex items-center gap-2 text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-wide"
+            >
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+              Expense Date
+            </label>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              className="w-full px-3 py-2.5 bg-white/70 dark:bg-gray-800/70 border-2 border-gray-200/80 dark:border-gray-600/80 rounded-xl focus:ring-2 focus:ring-emerald-500/30 focus:bg-white dark:focus:bg-gray-700/90 focus:border-emerald-400 dark:focus:border-emerald-400 text-gray-900 dark:text-gray-100 text-sm shadow-sm hover:shadow-md transition-all duration-200"
+              required
+              onFocus={(e) => e.target.showPicker()}
+            />
+          </div>
+        </div>
+
+        {/* Category Selection and Amount */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-green-50/50 to-emerald-50/50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-xl border border-green-100/50 dark:border-green-800/50">
+          {/* Category Selection */}
+          <div className="space-y-1.5">
+            <label
+              htmlFor="category"
+              className="flex items-center gap-2 text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-wide"
+            >
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+              Category
+              <span className="text-xs text-gray-400 dark:text-gray-500 ml-2 font-normal hidden sm:inline">
+                Use the ✨ button above for AI suggestions
+              </span>
+            </label>
+            <select
+              id="category"
+              name="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full px-3 py-2.5 bg-white/70 dark:bg-gray-800/70 border-2 border-gray-200/80 dark:border-gray-600/80 rounded-xl focus:ring-2 focus:ring-emerald-500/30 focus:bg-white dark:focus:bg-gray-700/90 focus:border-emerald-400 dark:focus:border-emerald-400 text-gray-900 dark:text-gray-100 cursor-pointer text-sm shadow-sm hover:shadow-md transition-all duration-200"
+              required
+            >
+              <option
+                value=""
+                disabled
+                className="text-gray-400 dark:text-gray-500"
+              >
+                Select category...
+              </option>
+              <option value="Food" className="text-gray-900 dark:text-gray-100">
+                🍔 Food & Dining
+              </option>
+              <option
+                value="Transportation"
+                className="text-gray-900 dark:text-gray-100"
+              >
+                🚗 Transportation
+              </option>
+              <option
+                value="Shopping"
+                className="text-gray-900 dark:text-gray-100"
+              >
+                🛒 Shopping
+              </option>
+              <option
+                value="Entertainment"
+                className="text-gray-900 dark:text-gray-100"
+              >
+                🎬 Entertainment
+              </option>
+              <option
+                value="Bills"
+                className="text-gray-900 dark:text-gray-100"
+              >
+                💡 Bills & Utilities
+              </option>
+              <option
+                value="Healthcare"
+                className="text-gray-900 dark:text-gray-100"
+              >
+                🏥 Healthcare
+              </option>
+              <option
+                value="Other"
+                className="text-gray-900 dark:text-gray-100"
+              >
+                📦 Other
+              </option>
+            </select>
+          </div>
+
+          {/* Amount */}
+          <div className="space-y-1.5">
+            <label
+              htmlFor="amount"
+              className="flex items-center gap-2 text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-wide"
+            >
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+              Amount
+              <span className="text-xs text-gray-400 dark:text-gray-500 ml-2 font-normal hidden sm:inline">
+                Enter amount between $0 and $1,000
+              </span>
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 font-medium text-sm">
+                $
+              </span>
+              <input
+                type="number"
+                name="amount"
+                id="amount"
+                min="0"
+                max="1000"
+                step="0.01"
+                value={amount}
+                onChange={(e) => setAmount(parseFloat(e.target.value) || 0)}
+                className="w-full pl-6 pr-3 py-2.5 bg-white/70 dark:bg-gray-800/70 border-2 border-gray-200/80 dark:border-gray-600/80 rounded-xl focus:ring-2 focus:ring-emerald-500/30 focus:bg-white dark:focus:bg-gray-700/90 focus:border-emerald-400 dark:focus:border-emerald-400 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 text-sm font-semibold shadow-sm hover:shadow-md transition-all duration-200"
+                placeholder="0.00"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full relative overflow-hidden bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white px-4 py-3 sm:px-5 sm:py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl group transition-all duration-300 border-2 border-transparent hover:border-white/20 text-sm sm:text-base"
+          disabled={isLoading}
+        >
+          <div className="relative flex items-center justify-center gap-2">
+            {isLoading ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <span>Processing...</span>
+              </>
+            ) : (
+              <>
+                <span className="text-lg">💫</span>
+                <span>Add Expense</span>
+              </>
+            )}
+          </div>
+        </button>
+      </form>
+
+      {/* Alert Message */}
+      {alertMessage && (
+        <div
+          className={`mt-4 p-3 rounded-xl border-l-4 backdrop-blur-sm ${
+            alertType === "success"
+              ? "bg-green-50/80 dark:bg-green-900/20 border-l-green-500 text-green-800 dark:text-green-200"
+              : "bg-red-50/80 dark:bg-red-900/20 border-l-red-500 text-red-800 dark:text-red-200"
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <div
+              className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                alertType === "success"
+                  ? "bg-green-100 dark:bg-green-800"
+                  : "bg-red-100 dark:bg-red-800"
+              }`}
+            >
+              <span className="text-sm">
+                {alertType === "success" ? "✅" : "⚠️"}
+              </span>
+            </div>
+            <p className="font-medium text-sm">{alertMessage}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default AddRecord;
+```
+### Create the addExpenseRecord action
+1. Go to `src/app/` and create a new folder called `actions`, create a file inside called `addExpenseRecord.ts`
+```typescript
+"use server";
+import { auth } from "@clerk/nextjs/server";
+import { db } from "@/lib/db";
+import { revalidatePath } from "next/cache";
+
+interface RecordData {
+  text: string;
+  amount: number;
+  category: string;
+  date: string; // Added date field
+}
+
+interface RecordResult {
+  data?: RecordData;
+  error?: string;
+}
+
+async function addExpenseRecord(formData: FormData): Promise<RecordResult> {
+  const textValue = formData.get("text");
+  const amountValue = formData.get("amount");
+  const categoryValue = formData.get("category");
+  const dateValue = formData.get("date"); // Extract date from formData
+
+  // Check for input values
+  if (
+    !textValue ||
+    textValue === "" ||
+    !amountValue ||
+    !categoryValue ||
+    categoryValue === "" ||
+    !dateValue ||
+    dateValue === ""
+  ) {
+    return { error: "Text, amount, category, or date is missing" };
+  }
+
+  const text: string = textValue.toString(); // Ensure text is a string
+  const amount: number = parseFloat(amountValue.toString()); // Parse amount as number
+  const category: string = categoryValue.toString(); // Ensure category is a string
+  // Convert date to ISO-8601 format while preserving the user's input date
+  let date: string;
+  try {
+    // Parse the date string (YYYY-MM-DD format) and create a date at noon UTC to avoid timezone issues
+    const inputDate = dateValue.toString();
+    const [year, month, day] = inputDate.split("-");
+    const dateObj = new Date(
+      Date.UTC(parseInt(year), parseInt(month) - 1, parseInt(day), 12, 0, 0)
+    );
+    date = dateObj.toISOString();
+  } catch (error) {
+    console.error("Invalid date format:", error); // Log the error
+    return { error: "Invalid date format" };
+  }
+
+  // Get logged in user
+  const { userId } = await auth();
+
+  // Check for user
+  if (!userId) {
+    return { error: "User not found" };
+  }
+
+  try {
+    // Create a new record (allow multiple expenses per day)
+    const createdRecord = await db.records.create({
+      data: {
+        text,
+        amount,
+        category,
+        date, // Save the date to the database
+        userId,
+      },
+    });
+
+    const recordData: RecordData = {
+      text: createdRecord.text,
+      amount: createdRecord.amount,
+      category: createdRecord.category,
+      date: createdRecord.date?.toISOString() || date,
+    };
+
+    revalidatePath("/");
+
+    return { data: recordData };
+  } catch (error) {
+    console.error("Error adding expense record:", error); // Log the error
+    return {
+      error: "An unexpected error occurred while adding the expense record.",
+    };
+  }
+}
+
+export default addExpenseRecord;
+```
+### Create the suggestCategory action
+1. Go to `src/app/actions/` and create a file called `suggestCategory.ts`.
+```typescript
+"use server";
+
+import { categorizeExpense } from "@/lib/ai";
+
+export async function suggestCategory(
+  description: string
+): Promise<{ category: string; error?: string }> {
+  try {
+    if (!description || description.trim().length < 2) {
+      return {
+        category: "Other",
+        error: "Description too short for AI analysis",
+      };
+    }
+
+    const category = await categorizeExpense(description.trim());
+    return { category };
+  } catch (error) {
+    console.error("❌ Error in suggestCategory server action:", error);
+    return {
+      category: "Other",
+      error: "Unable to suggest category at this time",
+    };
+  }
+}
+```
+2. Install openai plugin.
+```bash
+npm install openai
+```
+3. Go to [OpenRouterAI](https://openrouter.ai/), and create an account.
+4. Hover over your profile picture and click on Keys.
+5. Create a new Key, name: budget-tracker-app.
+6. Copy the key and paste it inside your `.env` file.
+```typescript
+OPENROUTER_API_KEY=your_api_key
+```
+7. Add the next public app url variable to `.env` file.
+```typescript
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+8. Go to `src/lib/` and create a file called `ai.ts` (you can update the AI model from [OpenRouterAI](https://openrouter.ai/) )
+```typescript
+import OpenAI from 'openai';
+
+interface RawInsight {
+  type?: string;
+  title?: string;
+  message?: string;
+  action?: string;
+  confidence?: number;
+}
+
+const openai = new OpenAI({
+  baseURL: 'https://openrouter.ai/api/v1',
+  apiKey: process.env.OPENROUTER_API_KEY || process.env.OPENAI_API_KEY,
+  defaultHeaders: {
+    'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    'X-Title': 'ExpenseTracker AI',
+  },
+});
+
+export interface ExpenseRecord {
+  id: string;
+  amount: number;
+  category: string;
+  description: string;
+  date: string;
+}
+
+export interface AIInsight {
+  id: string;
+  type: 'warning' | 'info' | 'success' | 'tip';
+  title: string;
+  message: string;
+  action?: string;
+  confidence: number;
+}
+
+export async function generateExpenseInsights(
+  expenses: ExpenseRecord[]
+): Promise<AIInsight[]> {
+  try {
+    // Prepare expense data for AI analysis
+    const expensesSummary = expenses.map((expense) => ({
+      amount: expense.amount,
+      category: expense.category,
+      description: expense.description,
+      date: expense.date,
+    }));
+
+    const prompt = `Analyze the following expense data and provide 3-4 actionable financial insights. 
+    Return a JSON array of insights with this structure:
+    {
+      "type": "warning|info|success|tip",
+      "title": "Brief title",
+      "message": "Detailed insight message with specific numbers when possible",
+      "action": "Actionable suggestion",
+      "confidence": 0.8
+    }
+
+    Expense Data:
+    ${JSON.stringify(expensesSummary, null, 2)}
+
+    Focus on:
+    1. Spending patterns (day of week, categories)
+    2. Budget alerts (high spending areas)
+    3. Money-saving opportunities
+    4. Positive reinforcement for good habits
+
+    Return only valid JSON array, no additional text.`;
+
+    const completion = await openai.chat.completions.create({
+      model: 'deepseek/deepseek-chat-v3-0324:free',
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are a financial advisor AI that analyzes spending patterns and provides actionable insights. Always respond with valid JSON only.',
+        },
+        {
+          role: 'user',
+          content: prompt,
+        },
+      ],
+      temperature: 0.7,
+      max_tokens: 1000,
+    });
+
+    const response = completion.choices[0].message.content;
+    if (!response) {
+      throw new Error('No response from AI');
+    }
+
+    // Clean the response by removing markdown code blocks if present
+    let cleanedResponse = response.trim();
+    if (cleanedResponse.startsWith('```json')) {
+      cleanedResponse = cleanedResponse
+        .replace(/^```json\s*/, '')
+        .replace(/\s*```$/, '');
+    } else if (cleanedResponse.startsWith('```')) {
+      cleanedResponse = cleanedResponse
+        .replace(/^```\s*/, '')
+        .replace(/\s*```$/, '');
+    }
+
+    // Parse AI response
+    const insights = JSON.parse(cleanedResponse);
+
+    // Add IDs and ensure proper format
+    const formattedInsights = insights.map(
+      (insight: RawInsight, index: number) => ({
+        id: `ai-${Date.now()}-${index}`,
+        type: insight.type || 'info',
+        title: insight.title || 'AI Insight',
+        message: insight.message || 'Analysis complete',
+        action: insight.action,
+        confidence: insight.confidence || 0.8,
+      })
+    );
+
+    return formattedInsights;
+  } catch (error) {
+    console.error('❌ Error generating AI insights:', error);
+
+    // Fallback to mock insights if AI fails
+    return [
+      {
+        id: 'fallback-1',
+        type: 'info',
+        title: 'AI Analysis Unavailable',
+        message:
+          'Unable to generate personalized insights at this time. Please try again later.',
+        action: 'Refresh insights',
+        confidence: 0.5,
+      },
+    ];
+  }
+}
+
+export async function categorizeExpense(description: string): Promise<string> {
+  try {
+    const completion = await openai.chat.completions.create({
+      model: 'deepseek/deepseek-chat-v3-0324:free',
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are an expense categorization AI. Categorize expenses into one of these categories: Food, Transportation, Entertainment, Shopping, Bills, Healthcare, Other. Respond with only the category name.',
+        },
+        {
+          role: 'user',
+          content: `Categorize this expense: "${description}"`,
+        },
+      ],
+      temperature: 0.1,
+      max_tokens: 20,
+    });
+
+    const category = completion.choices[0].message.content?.trim();
+
+    const validCategories = [
+      'Food',
+      'Transportation',
+      'Entertainment',
+      'Shopping',
+      'Bills',
+      'Healthcare',
+      'Other',
+    ];
+
+    const finalCategory = validCategories.includes(category || '')
+      ? category!
+      : 'Other';
+    return finalCategory;
+  } catch (error) {
+    console.error('❌ Error categorizing expense:', error);
+    return 'Other';
+  }
+}
+
+export async function generateAIAnswer(
+  question: string,
+  context: ExpenseRecord[]
+): Promise<string> {
+  try {
+    const expensesSummary = context.map((expense) => ({
+      amount: expense.amount,
+      category: expense.category,
+      description: expense.description,
+      date: expense.date,
+    }));
+
+    const prompt = `Based on the following expense data, provide a detailed and actionable answer to this question: "${question}"
+
+    Expense Data:
+    ${JSON.stringify(expensesSummary, null, 2)}
+
+    Provide a comprehensive answer that:
+    1. Addresses the specific question directly
+    2. Uses concrete data from the expenses when possible
+    3. Offers actionable advice
+    4. Keeps the response concise but informative (2-3 sentences)
+    
+    Return only the answer text, no additional formatting.`;
+
+    const completion = await openai.chat.completions.create({
+      model: 'deepseek/deepseek-chat-v3-0324:free',
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are a helpful financial advisor AI that provides specific, actionable answers based on expense data. Be concise but thorough.',
+        },
+        {
+          role: 'user',
+          content: prompt,
+        },
+      ],
+      temperature: 0.7,
+      max_tokens: 200,
+    });
+
+    const response = completion.choices[0].message.content;
+    if (!response) {
+      throw new Error('No response from AI');
+    }
+
+    return response.trim();
+  } catch (error) {
+    console.error('❌ Error generating AI answer:', error);
+    return "I'm unable to provide a detailed answer at the moment. Please try refreshing the insights or check your connection.";
+  }
+}
+```
+# 6 - Record chart component
+1. Go to `src/components/recordChart.tsx`
+```typescript
+import getRecords from "@/app/actions/getRecords";
+import BarChart from "./barChart"; // Ensure BarChart.tsx or BarChart.jsx exists in the same directory
+
+const RecordChart = async () => {
+  const { records, error } = await getRecords();
+
+  if (error) {
+    return (
+      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+            <span className="text-white text-sm sm:text-lg">📊</span>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+              Expense Chart
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              Visual representation of your spending
+            </p>
+          </div>
+        </div>
+        <div className="bg-red-50/80 dark:bg-red-900/20 backdrop-blur-sm p-3 sm:p-4 rounded-xl border-l-4 border-l-red-500">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-6 h-6 bg-red-100 dark:bg-red-800 rounded-full flex items-center justify-center">
+              <span className="text-sm">⚠️</span>
+            </div>
+            <p className="text-red-800 dark:text-red-300 font-semibold text-sm">
+              Error loading chart data
+            </p>
+          </div>
+          <p className="text-red-700 dark:text-red-400 text-xs ml-8">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!records || records.length === 0) {
+    return (
+      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+            <span className="text-white text-sm sm:text-lg">📊</span>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+              Expense Chart
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              Visual representation of your spending
+            </p>
+          </div>
+        </div>
+        <div className="text-center py-6 sm:py-8">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <span className="text-2xl sm:text-3xl">📈</span>
+          </div>
+          <h4 className="text-base sm:text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
+            No Data to Display
+          </h4>
+          <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto leading-relaxed text-sm">
+            Start tracking your expenses to see your spending patterns
+            visualized in this chart.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+          <span className="text-white text-sm sm:text-lg">📊</span>
+        </div>
+        <div>
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+            Expense Chart
+          </h3>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+            Visual representation of your spending
+          </p>
+        </div>
+      </div>
+      <div className="overflow-x-auto">
+        <BarChart
+          records={records.map((record) => ({
+            ...record,
+            date: String(record.date),
+          }))}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default RecordChart;
+```
+## Create the getRecord action
+1. go to `src/app/actions/` and create a file called `getRecords.ts`
+```typescript
+"use server";
+import { db } from "@/lib/db";
+import { auth } from "@clerk/nextjs/server";
+import { Record } from "@/types/Record";
+
+async function getRecords(): Promise<{
+  records?: Record[];
+  error?: string;
+}> {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: "User not found" };
+  }
+
+  try {
+    const records = await db.records.findMany({
+      where: { userId },
+      orderBy: {
+        date: "desc", // Sort by the `date` field in descending order
+      },
+      take: 10, // Limit the request to 10 records
+    });
+
+    return { records };
+  } catch (error) {
+    console.error("Error fetching records:", error); // Log the error
+    return { error: "Database error" };
+  }
+}
+
+export default getRecords;
+```
+## Create the type Record
+1. Go to `src/`, create a folder called `types`, create a file inside called `record.ts`
+```typescript
+export interface Record {
+  date: string | number | Date;
+  id: string;
+  text: string;
+  amount: number;
+  category: string;
+  userId: string;
+  createdAt: Date;
+}
+```
+## Create the barChart component
+1. go to `src/components/` and create a file inside called `barChart.tsx`
+```typescript
+"use client";
+
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { useTheme } from "@/contexts/themeContext";
+import { useState, useEffect } from "react";
+
+// Register Chart.js components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+// Define the type for a record
+interface Record {
+  date: string; // ISO date string
+  amount: number; // Amount spent
+  category: string; // Expense category
+}
+
+const BarChart = ({ records }: { records: Record[] }) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const [windowWidth, setWindowWidth] = useState(1024); // Default to desktop width
+
+  useEffect(() => {
+    // Set initial window width
+    setWindowWidth(window.innerWidth);
+
+    // Add resize listener
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 640;
+
+  // Aggregate expenses by date
+  const aggregateByDate = (records: Record[]) => {
+    const dateMap = new Map<
+      string,
+      { total: number; categories: string[]; originalDate: string }
+    >();
+
+    records.forEach((record) => {
+      // Parse the date string properly and extract just the date part (YYYY-MM-DD)
+      const dateObj = new Date(record.date);
+      // Use UTC methods to avoid timezone issues
+      const year = dateObj.getUTCFullYear();
+      const month = String(dateObj.getUTCMonth() + 1).padStart(2, "0");
+      const day = String(dateObj.getUTCDate()).padStart(2, "0");
+      const dateKey = `${year}-${month}-${day}`;
+      const existing = dateMap.get(dateKey);
+
+      if (existing) {
+        existing.total += record.amount;
+        if (!existing.categories.includes(record.category)) {
+          existing.categories.push(record.category);
+        }
+      } else {
+        dateMap.set(dateKey, {
+          total: record.amount,
+          categories: [record.category],
+          originalDate: record.date, // Keep original ISO date for sorting
+        });
+      }
+    });
+
+    // Convert to array and sort by date (oldest to newest)
+    return Array.from(dateMap.entries())
+      .map(([date, data]) => ({
+        date,
+        amount: data.total,
+        categories: data.categories,
+        originalDate: data.originalDate,
+      }))
+      .sort(
+        (a, b) =>
+          new Date(a.originalDate).getTime() -
+          new Date(b.originalDate).getTime()
+      );
+  };
+
+  const aggregatedData = aggregateByDate(records);
+
+  // Get color based on amount (since we're aggregating multiple categories)
+  const getAmountColor = (amount: number) => {
+    if (amount > 200)
+      return {
+        bg: isDark ? "rgba(255, 99, 132, 0.3)" : "rgba(255, 99, 132, 0.2)",
+        border: isDark ? "rgba(255, 99, 132, 0.8)" : "rgba(255, 99, 132, 1)",
+      }; // Red for high spending
+    if (amount > 100)
+      return {
+        bg: isDark ? "rgba(255, 206, 86, 0.3)" : "rgba(255, 206, 86, 0.2)",
+        border: isDark ? "rgba(255, 206, 86, 0.8)" : "rgba(255, 206, 86, 1)",
+      }; // Yellow for medium spending
+    if (amount > 50)
+      return {
+        bg: isDark ? "rgba(54, 162, 235, 0.3)" : "rgba(54, 162, 235, 0.2)",
+        border: isDark ? "rgba(54, 162, 235, 0.8)" : "rgba(54, 162, 235, 1)",
+      }; // Blue for moderate spending
+    return {
+      bg: isDark ? "rgba(75, 192, 192, 0.3)" : "rgba(75, 192, 192, 0.2)",
+      border: isDark ? "rgba(75, 192, 192, 0.8)" : "rgba(75, 192, 192, 1)",
+    }; // Green for low spending
+  };
+
+  // Prepare data for the chart
+  const data = {
+    labels: aggregatedData.map((item) => {
+      // Format date as MM/DD for better readability
+      const [, month, day] = item.date.split("-");
+      return `${month}/${day}`;
+    }),
+    datasets: [
+      {
+        data: aggregatedData.map((item) => item.amount),
+        backgroundColor: aggregatedData.map(
+          (item) => getAmountColor(item.amount).bg
+        ),
+        borderColor: aggregatedData.map(
+          (item) => getAmountColor(item.amount).border
+        ),
+        borderWidth: 1,
+        borderRadius: 2, // Rounded bar edges
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false, // Allow flexible height
+    plugins: {
+      legend: {
+        display: false, // Remove legend
+      },
+      title: {
+        display: false, // Remove chart title
+      },
+      tooltip: {
+        backgroundColor: isDark
+          ? "rgba(31, 41, 55, 0.95)"
+          : "rgba(255, 255, 255, 0.95)",
+        titleColor: isDark ? "#f9fafb" : "#1f2937",
+        bodyColor: isDark ? "#d1d5db" : "#374151",
+        borderColor: isDark ? "#374151" : "#e5e7eb",
+        borderWidth: 1,
+        cornerRadius: 8,
+        callbacks: {
+          label: function (context: { dataIndex: number }) {
+            const dataIndex = context.dataIndex;
+            const item = aggregatedData[dataIndex];
+            const categoriesText =
+              item.categories.length > 1
+                ? `Categories: ${item.categories.join(", ")}`
+                : `Category: ${item.categories[0]}`;
+            return [`Total: $${item.amount.toFixed(2)}`, categoriesText];
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: "Date",
+          font: {
+            size: isMobile ? 12 : 14,
+            weight: "bold" as const,
+          },
+          color: isDark ? "#d1d5db" : "#2c3e50",
+        },
+        ticks: {
+          font: {
+            size: isMobile ? 10 : 12,
+          },
+          color: isDark ? "#9ca3af" : "#7f8c8d", // Gray x-axis labels
+          maxRotation: isMobile ? 45 : 0, // Rotate labels on mobile
+          minRotation: isMobile ? 45 : 0,
+        },
+        grid: {
+          display: false, // Hide x-axis grid lines
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: "Amount ($)",
+          font: {
+            size: isMobile ? 12 : 16, // Smaller font on mobile
+            weight: "bold" as const,
+          },
+          color: isDark ? "#d1d5db" : "#2c3e50",
+        },
+        ticks: {
+          font: {
+            size: isMobile ? 10 : 12, // Smaller font on mobile
+          },
+          color: isDark ? "#9ca3af" : "#7f8c8d", // Gray y-axis labels
+          callback: function (value: string | number) {
+            return "$" + value; // Add dollar sign to y-axis labels
+          },
+        },
+        grid: {
+          color: isDark ? "#374151" : "#e0e0e0", // Dark mode grid lines
+        },
+        beginAtZero: true, // Start y-axis at zero for expenses
+      },
+    },
+  };
+
+  return (
+    <div className="relative w-full h-64 sm:h-72 md:h-80">
+      <Bar data={data} options={options} />
+    </div>
+  );
+};
+
+export default BarChart;
+```
+2. install react-chartjs-2 & chart.js package
+```bash
+npm install chart.js
+npm install react-chartjs-2
+```
+# 7 - Expense Stats component
+1. Go to `src/components/expenseStats.tsx`
+```typescript
+import React from 'react';
+import getUserRecord from '@/app/actions/getUserRecord';
+import getBestWorstExpense from '@/app/actions/getBestWorstExpense';
+
+const ExpenseStats = async () => {
+  try {
+    // Fetch both average and range data
+    const [userRecordResult, rangeResult] = await Promise.all([
+      getUserRecord(),
+      getBestWorstExpense(),
+    ]);
+
+    const { record, daysWithRecords } = userRecordResult;
+    const { bestExpense, worstExpense } = rangeResult;
+
+    // Calculate average expense
+    const validRecord = record || 0;
+    const validDays =
+      daysWithRecords && daysWithRecords > 0 ? daysWithRecords : 1;
+    const averageExpense = validRecord / validDays;
+
+    return (
+      <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl'>
+        <div className='flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6'>
+          <div className='w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg'>
+            <span className='text-white text-sm sm:text-lg'>📊</span>
+          </div>
+          <div>
+            <h3 className='text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100'>
+              Expense Statistics
+            </h3>
+            <p className='text-xs text-gray-500 dark:text-gray-400 mt-0.5'>
+              Your spending insights and ranges
+            </p>
+          </div>
+        </div>
+
+        <div className='space-y-3 sm:space-y-4'>
+          {/* Average Daily Spending */}
+          <div className='bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-600 rounded-xl p-3 sm:p-4 border border-gray-200/50 dark:border-gray-600/50'>
+            <div className='text-center'>
+              <p className='text-xs font-medium text-gray-600 dark:text-gray-300 mb-2 tracking-wide uppercase'>
+                Average Daily Spending
+              </p>
+              <div className='text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2'>
+                ${averageExpense.toFixed(2)}
+              </div>
+              <div className='inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full text-xs font-medium'>
+                <span className='w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full'></span>
+                Based on {validDays} days with expenses
+              </div>
+            </div>
+          </div>
+
+          {/* Expense Range */}
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3'>
+            {/* Highest Expense */}
+            <div className='bg-red-50/80 dark:bg-red-900/20 backdrop-blur-sm p-3 sm:p-4 rounded-xl border-l-4 border-l-red-500 hover:bg-red-50 dark:hover:bg-red-900/30'>
+              <div className='flex items-center gap-2'>
+                <div className='w-6 h-6 bg-red-100 dark:bg-red-800 rounded-xl flex items-center justify-center flex-shrink-0'>
+                  <span className='text-sm leading-none text-red-600 dark:text-red-300 font-bold'>
+                    ↑
+                  </span>
+                </div>
+                <div className='flex-1'>
+                  <h4 className='font-bold text-gray-900 dark:text-gray-100 text-xs mb-0.5'>
+                    Highest
+                  </h4>
+                  <p className='text-lg font-bold text-red-600 dark:text-red-300'>
+                    {bestExpense !== undefined ? `$${bestExpense}` : 'No data'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Lowest Expense */}
+            <div className='bg-green-50/80 dark:bg-green-900/20 backdrop-blur-sm p-3 sm:p-4 rounded-xl border-l-4 border-l-green-500 hover:bg-green-50 dark:hover:bg-green-900/30'>
+              <div className='flex items-center gap-2'>
+                <div className='w-6 h-6 bg-green-100 dark:bg-green-800 rounded-xl flex items-center justify-center flex-shrink-0'>
+                  <span className='text-sm leading-none text-green-600 dark:text-green-300 font-bold'>
+                    ↓
+                  </span>
+                </div>
+                <div className='flex-1'>
+                  <h4 className='font-bold text-gray-900 dark:text-gray-100 text-xs mb-0.5'>
+                    Lowest
+                  </h4>
+                  <p className='text-lg font-bold text-green-600 dark:text-green-300'>
+                    {worstExpense !== undefined
+                      ? `$${worstExpense}`
+                      : 'No data'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } catch (error) {
+    console.error('Error fetching expense statistics:', error);
+    return (
+      <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl'>
+        <div className='flex items-center gap-3 mb-6'>
+          <div className='w-12 h-12 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg'>
+            <span className='text-white text-xl'>📊</span>
+          </div>
+          <div>
+            <h3 className='text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent'>
+              Expense Statistics
+            </h3>
+            <p className='text-sm text-gray-500 dark:text-gray-400 mt-1'>
+              Your spending insights and ranges
+            </p>
+          </div>
+        </div>
+        <div className='bg-red-50/80 dark:bg-red-900/20 backdrop-blur-sm p-6 rounded-xl border-l-4 border-l-red-500'>
+          <div className='flex items-center gap-3 mb-2'>
+            <div className='w-8 h-8 bg-red-100 dark:bg-red-800 rounded-full flex items-center justify-center'>
+              <span className='text-lg'>⚠️</span>
+            </div>
+            <p className='text-red-800 dark:text-red-300 font-semibold'>
+              Unable to load expense statistics
+            </p>
+          </div>
+          <p className='text-red-700 dark:text-red-400 text-sm ml-11'>
+            Please try again later
+          </p>
+        </div>
+      </div>
+    );
+  }
+};
+
+export default ExpenseStats;
+```
+## Create the getUserRecord action
+1. Go to `src/app/actions/` and create a new file called `getUserRecord.ts`
+```typescript
+'use server';
+import { db } from '@/lib/db';
+import { auth } from '@clerk/nextjs/server';
+
+async function getUserRecord(): Promise<{
+  record?: number;
+  daysWithRecords?: number;
+  error?: string;
+}> {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: 'User not found' };
+  }
+
+  try {
+    const records = await db.records.findMany({
+      where: { userId },
+    });
+
+    const record = records.reduce((sum, record) => sum + record.amount, 0);
+
+    // Count the number of days with valid sleep records
+    const daysWithRecords = records.filter(
+      (record) => record.amount > 0
+    ).length;
+
+    return { record, daysWithRecords };
+  } catch (error) {
+    console.error('Error fetching user record:', error); // Log the error
+    return { error: 'Database error' };
+  }
+}
+
+export default getUserRecord;
+```
+## Create getBestWorstExpense action
+1. Go to `src/app/actions`, create a new file called `getBestWorstExpense.ts`
+```typescript
+"use server";
+import { db } from "@/lib/db";
+import { auth } from "@clerk/nextjs/server";
+
+async function getBestWorstExpense(): Promise<{
+  bestExpense?: number;
+  worstExpense?: number;
+  error?: string;
+}> {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: "User not found" };
+  }
+
+  try {
+    // Fetch all records for the authenticated user
+    const records = await db.records.findMany({
+      where: { userId },
+      select: { amount: true }, // Fetch only the `amount` field for efficiency
+    });
+
+    if (!records || records.length === 0) {
+      return { bestExpense: 0, worstExpense: 0 }; // Return 0 if no records exist
+    }
+
+    const amounts = records.map((record) => record.amount);
+
+    // Calculate best and worst expense amounts
+    const bestExpense = Math.max(...amounts); // Highest amount
+    const worstExpense = Math.min(...amounts); // Lowest amount
+
+    return { bestExpense, worstExpense };
+  } catch (error) {
+    console.error("Error fetching expense amounts:", error); // Log the error
+    return { error: "Database error" };
+  }
+}
+
+export default getBestWorstExpense;
+```
+# 8 - AI insights component
+1. Go to `src/components/aiInsights.tsx`
+```typescript
+'use client';
+
+import { useState, useEffect } from 'react';
+import { getAIInsights } from '@/app/actions/getAIInsights';
+import { generateInsightAnswer } from '@/app/actions/generateInsightAnswer';
+
+interface InsightData {
+  id: string;
+  type: 'warning' | 'info' | 'success' | 'tip';
+  title: string;
+  message: string;
+  action?: string;
+  confidence?: number;
+}
+
+interface AIAnswer {
+  insightId: string;
+  answer: string;
+  isLoading: boolean;
+}
+
+const AIInsights = () => {
+  const [insights, setInsights] = useState<InsightData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+  const [aiAnswers, setAiAnswers] = useState<AIAnswer[]>([]);
+
+  const loadInsights = async () => {
+    setIsLoading(true);
+    try {
+      const newInsights = await getAIInsights();
+      setInsights(newInsights);
+      setLastUpdated(new Date());
+    } catch (error) {
+      console.error('❌ AIInsights: Failed to load AI insights:', error);
+      // Fallback to mock data if AI fails
+      setInsights([
+        {
+          id: 'fallback-1',
+          type: 'info',
+          title: 'AI Temporarily Unavailable',
+          message:
+            "We're working to restore AI insights. Please check back soon.",
+          action: 'Try again later',
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleActionClick = async (insight: InsightData) => {
+    if (!insight.action) return;
+
+    // Check if answer is already loading or exists
+    const existingAnswer = aiAnswers.find((a) => a.insightId === insight.id);
+    if (existingAnswer) {
+      // Remove the answer if it already exists (toggle functionality)
+      setAiAnswers((prev) => prev.filter((a) => a.insightId !== insight.id));
+      return;
+    }
+
+    // Add loading state
+    setAiAnswers((prev) => [
+      ...prev,
+      {
+        insightId: insight.id,
+        answer: '',
+        isLoading: true,
+      },
+    ]);
+
+    try {
+      // Generate question based on insight title and action
+      const question = `${insight.title}: ${insight.action}`;
+
+      // Use server action to generate AI answer
+      const answer = await generateInsightAnswer(question);
+
+      setAiAnswers((prev) =>
+        prev.map((a) =>
+          a.insightId === insight.id ? { ...a, answer, isLoading: false } : a
+        )
+      );
+    } catch (error) {
+      console.error('❌ Failed to generate AI answer:', error);
+      setAiAnswers((prev) =>
+        prev.map((a) =>
+          a.insightId === insight.id
+            ? {
+                ...a,
+                answer:
+                  'Sorry, I was unable to generate a detailed answer. Please try again.',
+                isLoading: false,
+              }
+            : a
+        )
+      );
+    }
+  };
+
+  useEffect(() => {
+    loadInsights();
+  }, []);
+
+  const getInsightIcon = (type: string) => {
+    switch (type) {
+      case 'warning':
+        return '⚠️';
+      case 'success':
+        return '✅';
+      case 'tip':
+        return '💡';
+      case 'info':
+        return 'ℹ️';
+      default:
+        return '🤖';
+    }
+  };
+
+  const getInsightColors = (type: string) => {
+    switch (type) {
+      case 'warning':
+        return 'border-l-yellow-500 bg-yellow-50 dark:bg-yellow-900/20';
+      case 'success':
+        return 'border-l-green-500 bg-green-50 dark:bg-green-900/20';
+      case 'tip':
+        return 'border-l-emerald-500 bg-emerald-50 dark:bg-emerald-900/20';
+      case 'info':
+        return 'border-l-emerald-500 bg-emerald-50 dark:bg-emerald-900/20';
+      default:
+        return 'border-l-gray-500 bg-gray-50 dark:bg-gray-800/50';
+    }
+  };
+
+  const getButtonColors = (type: string) => {
+    switch (type) {
+      case 'warning':
+        return 'text-yellow-700 dark:text-yellow-300 hover:text-yellow-800 dark:hover:text-yellow-200';
+      case 'success':
+        return 'text-green-700 dark:text-green-300 hover:text-green-800 dark:hover:text-green-200';
+      case 'tip':
+        return 'text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200';
+      case 'info':
+        return 'text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200';
+      default:
+        return 'text-gray-700 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200';
+    }
+  };
+
+  const formatLastUpdated = () => {
+    if (!lastUpdated) return 'Loading...';
+
+    const now = new Date();
+    const diffMs = now.getTime() - lastUpdated.getTime();
+    const diffMins = Math.floor(diffMs / 60000);
+
+    if (diffMins < 1) return 'Just now';
+    if (diffMins < 60) return `${diffMins}m ago`;
+
+    const diffHours = Math.floor(diffMins / 60);
+    if (diffHours < 24) return `${diffHours}h ago`;
+
+    return lastUpdated.toLocaleDateString();
+  };
+
+  if (isLoading) {
+    return (
+      <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50'>
+        <div className='flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6'>
+          <div className='w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg'>
+            <span className='text-white text-sm sm:text-lg'>🤖</span>
+          </div>
+          <div className='flex-1'>
+            <h3 className='text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100'>
+              AI Insights
+            </h3>
+            <p className='text-xs text-gray-500 dark:text-gray-400 mt-0.5'>
+              Analyzing your spending patterns
+            </p>
+          </div>
+          <div className='flex items-center gap-1 sm:gap-2'>
+            <div className='w-5 h-5 sm:w-6 sm:h-6 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin'></div>
+            <span className='text-xs sm:text-sm text-emerald-600 dark:text-emerald-400 font-medium hidden sm:block'>
+              Analyzing...
+            </span>
+          </div>
+        </div>
+
+        <div className='space-y-3 sm:space-y-4'>
+          {[1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className='animate-pulse bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 p-3 sm:p-4 rounded-xl border border-gray-100 dark:border-gray-600'
+            >
+              <div className='flex items-start gap-3 sm:gap-4'>
+                <div className='w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 dark:bg-gray-600 rounded-lg'></div>
+                <div className='flex-1 space-y-2'>
+                  <div className='h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-3/4'></div>
+                  <div className='h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-full'></div>
+                  <div className='h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-2/3'></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className='mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700 text-center'>
+          <div className='flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400'>
+            <div className='w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse'></div>
+            <span className='text-xs sm:text-sm'>
+              AI is analyzing your financial patterns...
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl'>
+      <div className='flex items-center justify-between mb-4 sm:mb-6'>
+        <div className='flex items-center gap-2 sm:gap-3'>
+          <div className='w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg'>
+            <span className='text-white text-sm sm:text-lg'>🤖</span>
+          </div>
+          <div>
+            <h3 className='text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100'>
+              AI Insights
+            </h3>
+            <p className='text-xs text-gray-500 dark:text-gray-400 mt-0.5'>
+              AI financial analysis
+            </p>
+          </div>
+        </div>
+        <div className='flex items-center gap-2 sm:gap-3'>
+          <div className='inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full text-xs font-medium'>
+            <span className='w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full'></span>
+            <span className='hidden sm:inline'>{formatLastUpdated()}</span>
+            <span className='sm:hidden'>
+              {formatLastUpdated().includes('ago')
+                ? formatLastUpdated().replace(' ago', '')
+                : formatLastUpdated()}
+            </span>
+          </div>
+          <button
+            onClick={loadInsights}
+            className='w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200'
+            disabled={isLoading}
+          >
+            <span className='text-sm'>🔄</span>
+          </button>
+        </div>
+      </div>
+
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4'>
+        {insights.map((insight) => {
+          const currentAnswer = aiAnswers.find(
+            (a) => a.insightId === insight.id
+          );
+
+          return (
+            <div
+              key={insight.id}
+              className={`relative overflow-hidden rounded-xl p-3 sm:p-4 border-l-4 hover:shadow-lg transition-all duration-200 ${getInsightColors(
+                insight.type
+              )}`}
+            >
+              <div className='flex items-start justify-between'>
+                <div className='flex-1'>
+                  <div className='flex items-center gap-2 sm:gap-3 mb-2'>
+                    <div
+                      className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center ${
+                        insight.type === 'warning'
+                          ? 'bg-yellow-100 dark:bg-yellow-900/50'
+                          : insight.type === 'success'
+                          ? 'bg-green-100 dark:bg-green-900/50'
+                          : insight.type === 'tip'
+                          ? 'bg-emerald-100 dark:bg-emerald-900/50'
+                          : 'bg-emerald-100 dark:bg-emerald-900/50'
+                      }`}
+                    >
+                      <span className='text-sm sm:text-lg'>
+                        {getInsightIcon(insight.type)}
+                      </span>
+                    </div>
+                    <div className='flex-1'>
+                      <h4 className='font-bold text-gray-900 dark:text-gray-100 text-sm mb-0.5'>
+                        {insight.title}
+                      </h4>
+                      {insight.confidence && insight.confidence < 0.8 && (
+                        <span className='inline-block px-2 py-0.5 bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-300 rounded-full text-xs font-medium'>
+                          Preliminary
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <p className='text-gray-700 dark:text-gray-300 text-xs leading-relaxed mb-3'>
+                    {insight.message}
+                  </p>
+                  {insight.action && (
+                    <div className='text-left'>
+                      <span
+                        onClick={() => handleActionClick(insight)}
+                        className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-xs cursor-pointer transition-all duration-200 ${getButtonColors(
+                          insight.type
+                        )} hover:bg-white/50 dark:hover:bg-gray-700/50 ${
+                          currentAnswer ? 'bg-white/50 dark:bg-gray-700/50' : ''
+                        }`}
+                      >
+                        <span>{insight.action}</span>
+                        {currentAnswer?.isLoading ? (
+                          <div className='w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin'></div>
+                        ) : (
+                          <span className='text-xs'>
+                            {currentAnswer ? '↑' : '→'}
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* AI Answer Display */}
+                  {currentAnswer && (
+                    <div className='mt-3 p-3 bg-white/70 dark:bg-gray-700/70 backdrop-blur-sm rounded-lg border border-gray-200 dark:border-gray-600'>
+                      <div className='flex items-start gap-2'>
+                        <div className='w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0'>
+                          <span className='text-white text-xs'>🤖</span>
+                        </div>
+                        <div className='flex-1'>
+                          <h5 className='font-semibold text-gray-900 dark:text-gray-100 text-xs mb-1'>
+                            AI Answer:
+                          </h5>
+                          {currentAnswer.isLoading ? (
+                            <div className='space-y-1'>
+                              <div className='animate-pulse bg-gray-200 dark:bg-gray-600 h-2 rounded-lg w-full'></div>
+                              <div className='animate-pulse bg-gray-200 dark:bg-gray-600 h-2 rounded-lg w-3/4'></div>
+                              <div className='animate-pulse bg-gray-200 dark:bg-gray-600 h-2 rounded-lg w-1/2'></div>
+                            </div>
+                          ) : (
+                            <p className='text-gray-700 dark:text-gray-300 text-xs leading-relaxed'>
+                              {currentAnswer.answer}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className='mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700'>
+        <div className='flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0'>
+          <div className='flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400'>
+            <div className='w-5 h-5 sm:w-6 sm:h-6 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center'>
+              <span className='text-sm'>🧠</span>
+            </div>
+            <span className='font-medium text-xs'>Powered by AI analysis</span>
+          </div>
+          <button
+            onClick={loadInsights}
+            className='px-3 py-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-200'
+          >
+            <span className='sm:hidden'>Refresh</span>
+            <span className='hidden sm:inline'>Refresh Insights →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AIInsights;
+```
+## Create getAIInsights action
+1. go to `src/app/actions/` create a new file called `getAIInsights.ts`
+```typescript
+'use server';
+
+import { checkUser } from '@/lib/checkUser';
+import { db } from '@/lib/db';
+import { generateExpenseInsights, AIInsight, ExpenseRecord } from '@/lib/ai';
+
+export async function getAIInsights(): Promise<AIInsight[]> {
+  try {
+    const user = await checkUser();
+    if (!user) {
+      throw new Error('User not authenticated');
+    }
+
+    // Get user's recent expenses (last 30 days)
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+    const expenses = await db.records.findMany({
+      where: {
+        userId: user.clerkUserId,
+        createdAt: {
+          gte: thirtyDaysAgo,
+        },
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+      take: 50, // Limit to recent 50 expenses for analysis
+    });
+
+    if (expenses.length === 0) {
+      // Return default insights for new users
+      return [
+        {
+          id: 'welcome-1',
+          type: 'info',
+          title: 'Welcome to ExpenseTracker AI!',
+          message:
+            'Start adding your expenses to get personalized AI insights about your spending patterns.',
+          action: 'Add your first expense',
+          confidence: 1.0,
+        },
+        {
+          id: 'welcome-2',
+          type: 'tip',
+          title: 'Track Regularly',
+          message:
+            'For best results, try to log expenses daily. This helps our AI provide more accurate insights.',
+          action: 'Set daily reminders',
+          confidence: 1.0,
+        },
+      ];
+    }
+
+    // Convert to format expected by AI
+    const expenseData: ExpenseRecord[] = expenses.map((expense) => ({
+      id: expense.id,
+      amount: expense.amount,
+      category: expense.category || 'Other',
+      description: expense.text,
+      date: expense.createdAt.toISOString(),
+    }));
+
+    // Generate AI insights
+    const insights = await generateExpenseInsights(expenseData);
+    return insights;
+  } catch (error) {
+    console.error('Error getting AI insights:', error);
+
+    // Return fallback insights
+    return [
+      {
+        id: 'error-1',
+        type: 'warning',
+        title: 'Insights Temporarily Unavailable',
+        message:
+          "We're having trouble analyzing your expenses right now. Please try again in a few minutes.",
+        action: 'Retry analysis',
+        confidence: 0.5,
+      },
+    ];
+  }
+}
+```
+## Create generateInsightAnswer action
+1. Go to `src/app/actions/` create a new file called `generateInsightAnswer.ts`
+```typescript
+'use server';
+
+import { checkUser } from '@/lib/checkUser';
+import { db } from '@/lib/db';
+import { generateAIAnswer, ExpenseRecord } from '@/lib/ai';
+
+export async function generateInsightAnswer(question: string): Promise<string> {
+  try {
+    const user = await checkUser();
+    if (!user) {
+      throw new Error('User not authenticated');
+    }
+
+    // Get user's recent expenses (last 30 days)
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+    const expenses = await db.records.findMany({
+      where: {
+        userId: user.clerkUserId,
+        createdAt: {
+          gte: thirtyDaysAgo,
+        },
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+      take: 50, // Limit to recent 50 expenses for analysis
+    });
+
+    // Convert to format expected by AI
+    const expenseData: ExpenseRecord[] = expenses.map((expense) => ({
+      id: expense.id,
+      amount: expense.amount,
+      category: expense.category || 'Other',
+      description: expense.text,
+      date: expense.createdAt.toISOString(),
+    }));
+
+    // Generate AI answer
+    const answer = await generateAIAnswer(question, expenseData);
+    return answer;
+  } catch (error) {
+    console.error('Error generating insight answer:', error);
+    return "I'm unable to provide a detailed answer at the moment. Please try refreshing the insights or check your connection.";
+  }
+}
+```
+# 9 - Record history component
+1. Go to `src/components/recordHistory.tsx`
+```typescript
+import getRecords from "@/app/actions/getRecords";
+import RecordItem from "./recordItem";
+import { Record } from "@/types/Record";
+
+const RecordHistory = async () => {
+  const { records, error } = await getRecords();
+
+  if (error) {
+    return (
+      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50">
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+            <span className="text-white text-sm sm:text-lg">📝</span>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
+              Expense History
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              Your spending timeline
+            </p>
+          </div>
+        </div>
+        <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 border-l-4 border-l-red-500 p-3 sm:p-4 rounded-xl">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-100 dark:bg-red-800 rounded-lg flex items-center justify-center">
+              <span className="text-base sm:text-lg">⚠️</span>
+            </div>
+            <h4 className="font-bold text-red-800 dark:text-red-300 text-sm">
+              Error loading expense history
+            </h4>
+          </div>
+          <p className="text-red-700 dark:text-red-400 ml-8 sm:ml-10 text-xs">
+            {error}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!records || records.length === 0) {
+    return (
+      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50">
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+            <span className="text-white text-sm sm:text-lg">📝</span>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+              Expense History
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              Your spending timeline
+            </p>
+          </div>
+        </div>
+        <div className="text-center py-6 sm:py-8">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-900/50 dark:to-green-900/50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl sm:text-3xl">📊</span>
+          </div>
+          <h4 className="text-base sm:text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
+            No Expense Records Found
+          </h4>
+          <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto text-sm">
+            Start tracking your expenses to see your spending history and
+            patterns here.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+          <span className="text-white text-sm sm:text-lg">📝</span>
+        </div>
+        <div>
+          <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
+            Expense History
+          </h3>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+            Your spending timeline
+          </p>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
+        {records.map((record: Record) => (
+          <RecordItem key={record.id} record={record} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default RecordHistory;
+```
+## Create deleteRecord action
+1. Go to `src/app/actions/deleteRecord.ts`
+```typescript
+"use server";
+import { db } from "@/lib/db";
+import { auth } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
+
+async function deleteRecord(recordId: string): Promise<{
+  message?: string;
+  error?: string;
+}> {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return { error: "User not found" };
+  }
+
+  try {
+    await db.records.delete({
+      where: {
+        id: recordId,
+        userId,
+      },
+    });
+
+    revalidatePath("/");
+
+    return { message: "Record deleted" };
+  } catch (error) {
+    console.error("Error deleting record:", error); // Log the error
+    return { error: "Database error" };
+  }
+}
+
+export default deleteRecord;
+```
+## Create the recordItem component
+1. Go to `src/components/` and create a new file called `recordItem.tsx`
+```typescript
+"use client";
+import { useState } from "react";
+import { Record } from "@/types/Record";
+import deleteRecord from "@/app/actions/deleteRecord";
+
+// Helper function to get category emoji
+const getCategoryEmoji = (category: string) => {
+  switch (category) {
+    case "Food":
+      return "🍔";
+    case "Transportation":
+      return "🚗";
+    case "Shopping":
+      return "🛒";
+    case "Entertainment":
+      return "🎬";
+    case "Bills":
+      return "💡";
+    case "Healthcare":
+      return "🏥";
+    default:
+      return "📦";
+  }
+};
+
+const RecordItem = ({ record }: { record: Record }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleDeleteRecord = async (recordId: string) => {
+    setIsLoading(true); // Show loading spinner
+    await deleteRecord(recordId); // Perform delete operation
+    setIsLoading(false); // Hide loading spinner
+  };
+
+  // Determine border color based on expense amount
+  const getBorderColor = (amount: number) => {
+    if (amount > 100) return "border-red-500"; // High expense
+    if (amount > 50) return "border-yellow-500"; // Medium expense
+    return "border-green-500"; // Low expense
+  };
+
+  return (
+    <li
+      className={`bg-white/60 dark:bg-gray-700/60 backdrop-blur-sm p-4 sm:p-6 rounded-xl shadow-lg border border-gray-100/50 dark:border-gray-600/50 border-l-4 ${getBorderColor(
+        record?.amount
+      )} hover:bg-white/80 dark:hover:bg-gray-700/80 relative min-h-[120px] sm:min-h-[140px] flex flex-col justify-between overflow-visible group`}
+    >
+      {/* Delete button positioned absolutely in top-right corner */}
+      <button
+        onClick={() => handleDeleteRecord(record.id)}
+        className={`absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center shadow-lg hover:shadow-xl border-2 border-white dark:border-gray-700 backdrop-blur-sm transform hover:scale-110 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-200 ${
+          isLoading ? "cursor-not-allowed scale-100" : ""
+        }`}
+        aria-label="Delete record"
+        disabled={isLoading} // Disable button while loading
+        title="Delete expense record"
+      >
+        {isLoading ? (
+          <div className="w-3 h-3 border border-white/30 border-t-white rounded-full animate-spin"></div>
+        ) : (
+          <svg
+            className="w-3 h-3 sm:w-4 sm:h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        )}
+      </button>
+
+      {/* Content area with proper spacing */}
+      <div className="flex-1 flex flex-col justify-between">
+        <div className="space-y-2 sm:space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-gray-500 dark:text-gray-400 tracking-wide uppercase">
+              {new Date(record?.date).toLocaleDateString()}
+            </span>
+            <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+              ${record?.amount.toFixed(2)}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-base sm:text-lg">
+              {getCategoryEmoji(record?.category)}
+            </span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              {record?.category}
+            </span>
+          </div>
+        </div>
+
+        <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2">
+          <p className="truncate break-words line-clamp-2">{record?.text}</p>
+        </div>
+      </div>
+    </li>
+  );
+};
+
+export default RecordItem;
+```
+# Deploy application to Vercel
+1. Go to [Vercel](https://vercel.com/), create an account and login.
+2. Connect vercel to github.
+3. Go to home page and import the project from github repo.
+4. Add .env variables, copy and paste from your file.
+5. Click on deploy.
